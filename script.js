@@ -25,13 +25,22 @@ function getUserChoice() {
 // Play a single round
 function playRound(playerSelection, computerSelection){
     if (((playerSelection == "Rock") && (computerSelection == "Scissors")) || ((playerSelection == "Scissors") && (computerSelection == "Paper")) || ((playerSelection == "Paper") && (computerSelection == "Rock"))) {
-        return `You Win! ${playerSelection} beats ${computerSelection}`;
+        console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+        return 1;
     } else if (((computerSelection == "Rock") && (playerSelection == "Scissors")) || ((computerSelection == "Scissors") && (playerSelection == "Paper")) || ((computerSelection == "Paper") && (playerSelection == "Rock"))) {
-        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+        console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+        return 0;
     } else {
-        return "Tie!";
+        console.log("Tie!");
+        return -1;
     }
 }
+
+function playGame() {
+    let playerScore = 0;
+    let computerScore = 0;
+}
+
 
 
 

@@ -12,6 +12,18 @@ function getComputerChoice(){
     }
 }
 
+// Get user input
+function getUserChoice() {
+
+    let input = prompt("Enter your choice:").toLowerCase();
+    
+    input = input[0].toUpperCase() + input.slice(1);
+
+    return input;
+}
+
+
+
 
 
 

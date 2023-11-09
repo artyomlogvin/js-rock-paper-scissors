@@ -23,7 +23,7 @@ function getUserChoice() {
 }
 
 // Play a single round
-function round(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection){
     if (((playerSelection == "Rock") && (computerSelection == "Scissors")) || ((playerSelection == "Scissors") && (computerSelection == "Paper")) || ((playerSelection == "Paper") && (computerSelection == "Rock"))) {
         return `You Win! ${playerSelection} beats ${computerSelection}`;
     } else if (((computerSelection == "Rock") && (playerSelection == "Scissors")) || ((computerSelection == "Scissors") && (playerSelection == "Paper")) || ((computerSelection == "Paper") && (playerSelection == "Rock"))) {

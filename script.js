@@ -39,7 +39,27 @@ function playRound(playerSelection, computerSelection){
 function playGame() {
     let playerScore = 0;
     let computerScore = 0;
+
+    for(i = 0; i < 5; i++) {
+        let roundResult = playRound(getUserChoice(), getComputerChoice());
+
+        if (roundResult == 1) {
+            playerScore++;
+        } else if (roundResult == 0) {
+            computerScore++;
+        }
+    }
+
+    if (playerScore > computerScore) {
+        console.log('Player Wins!\n' + "Player : Computer\n" + playerScore + " : " + computerScore);
+    } else if (playerScore < computerScore) {
+        console.log('Computer Wins!\n' + "Player : Computer\n" + playerScore + " : " + computerScore);
+    } else {
+        console.log('Tie!\n' + "Player : Computer\n" + playerScore + " : " + computerScore);
+    }
 }
+
+playGame();
 
 
 

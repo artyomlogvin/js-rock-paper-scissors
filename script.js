@@ -1,4 +1,4 @@
-// Generate the computer choice
+// Generate a computer choice
 function getComputerChoice(){
 
     let number = Math.floor(Math.random() * 3);

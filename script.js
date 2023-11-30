@@ -36,30 +36,19 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-function playGame() {
-    let playerScore = 0;
-    let computerScore = 0;
+const btnRock = document.querySelector('.btn-rock');
+const btnPaper = document.querySelector('.btn-paper');
+const btnScissors = document.querySelector('.btn-scissors');
 
-    for(i = 0; i < 5; i++) {
-        let roundResult = playRound(getUserChoice(), getComputerChoice());
+btnRock.addEventListener('click', () => playRound('Rock',
+getComputerChoice()));
 
-        if (roundResult == 1) {
-            playerScore++;
-        } else if (roundResult == 0) {
-            computerScore++;
-        }
-    }
+btnPaper.addEventListener('click', () => playRound('Paper',
+getComputerChoice()));
 
-    if (playerScore > computerScore) {
-        console.log('Player Wins!\n' + "Player : Computer\n" + playerScore + " : " + computerScore);
-    } else if (playerScore < computerScore) {
-        console.log('Computer Wins!\n' + "Player : Computer\n" + playerScore + " : " + computerScore);
-    } else {
-        console.log('Tie!\n' + "Player : Computer\n" + playerScore + " : " + computerScore);
-    }
-}
+btnScissors.addEventListener('click', () => playRound('Scissors',
+getComputerChoice()));
 
-playGame();
 
 
 

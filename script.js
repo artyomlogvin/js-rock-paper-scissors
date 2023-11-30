@@ -1,5 +1,3 @@
-const resultCont = document.querySelector('.result-container');
-
 // Generate a computer choice
 function getComputerChoice(){
 
@@ -32,9 +30,9 @@ function playRound(playerSelection, computerSelection){
     (computerSelection == "Paper")) || 
     ((playerSelection == "Paper") && 
     (computerSelection == "Rock"))) {
-        const newResult = document.createElement('p');
-        newResult.textContent = `You Win! ${playerSelection} beats ${computerSelection}`;
-        resultCont.appendChild(newResult);
+        let text = 
+        `You Win! ${playerSelection} beats ${computerSelection}`;
+        displayResult(text);
         return 1;
     } else if (((computerSelection == "Rock") && 
     (playerSelection == "Scissors")) || 
@@ -42,16 +40,23 @@ function playRound(playerSelection, computerSelection){
     (playerSelection == "Paper")) || 
     ((computerSelection == "Paper") && 
     (playerSelection == "Rock"))) {
-        const newResult = document.createElement('p');
-        newResult.textContent = `You Lose! ${computerSelection} beats ${playerSelection}`;
-        resultCont.appendChild(newResult);
+        let text = 
+        `You Lose! ${computerSelection} beats ${playerSelection}`;
+        displayResult(text);
         return 0;
     } else {
-        const newResult = document.createElement('p');
-        newResult.textContent = 'Tie!';
-        resultCont.appendChild(newResult);
+        let text = 'Tie!';
+        displayResult(text);
         return -1;
     }
+}
+
+// Display a text in the result container
+function displayResult(resultString) {
+    const resultCont = document.querySelector('.result-container');
+    const newResult = document.createElement('p');
+    newResult.textContent = resultString;
+    resultCont.appendChild(newResult);
 }
 
 // Simple buttons for player choices

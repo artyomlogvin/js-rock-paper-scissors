@@ -1,3 +1,5 @@
+const resultCont = document.querySelector('.result-container');
+
 // Generate a computer choice
 function getComputerChoice(){
 
@@ -24,18 +26,35 @@ function getUserChoice() {
 
 // Play a single round
 function playRound(playerSelection, computerSelection){
-    if (((playerSelection == "Rock") && (computerSelection == "Scissors")) || ((playerSelection == "Scissors") && (computerSelection == "Paper")) || ((playerSelection == "Paper") && (computerSelection == "Rock"))) {
-        console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+    if (((playerSelection == "Rock") && 
+    (computerSelection == "Scissors")) || 
+    ((playerSelection == "Scissors") && 
+    (computerSelection == "Paper")) || 
+    ((playerSelection == "Paper") && 
+    (computerSelection == "Rock"))) {
+        const newResult = document.createElement('p');
+        newResult.textContent = `You Win! ${playerSelection} beats ${computerSelection}`;
+        resultCont.appendChild(newResult);
         return 1;
-    } else if (((computerSelection == "Rock") && (playerSelection == "Scissors")) || ((computerSelection == "Scissors") && (playerSelection == "Paper")) || ((computerSelection == "Paper") && (playerSelection == "Rock"))) {
-        console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+    } else if (((computerSelection == "Rock") && 
+    (playerSelection == "Scissors")) || 
+    ((computerSelection == "Scissors") && 
+    (playerSelection == "Paper")) || 
+    ((computerSelection == "Paper") && 
+    (playerSelection == "Rock"))) {
+        const newResult = document.createElement('p');
+        newResult.textContent = `You Lose! ${computerSelection} beats ${playerSelection}`;
+        resultCont.appendChild(newResult);
         return 0;
     } else {
-        console.log("Tie!");
+        const newResult = document.createElement('p');
+        newResult.textContent = 'Tie!';
+        resultCont.appendChild(newResult);
         return -1;
     }
 }
 
+// Simple buttons for player choices
 const btnRock = document.querySelector('.btn-rock');
 const btnPaper = document.querySelector('.btn-paper');
 const btnScissors = document.querySelector('.btn-scissors');
